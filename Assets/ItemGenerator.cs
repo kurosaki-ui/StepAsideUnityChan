@@ -7,15 +7,20 @@ public class ItemGenerator : MonoBehaviour {
 	public GameObject coinPrefab;
 	public GameObject conePrefab;
 	private int startPos = -160;
-	private int goalPos = -120;
-	// private int goalPos = 120;
+	private int goalPos = 120;
 	private float posRange = 3.4f;
 	private GameObject unitychan;
+	private float unitychanPos = -200;
 
 	// Use this for initialization
 	void Start () {
 		this.unitychan = GameObject.Find("unitychan");
-		for(int i = startPos; i < goalPos; i+=15)
+	}
+
+	
+	// Update is called once per frame
+	void Update () {
+		if(unitychan.transform.position.z - unitychanPos >= 15)
 		{
 			int num = Random.Range(1, 11);
 			if(num <= 2)
@@ -23,7 +28,7 @@ public class ItemGenerator : MonoBehaviour {
 				for(float j = -1; j <= 1; j+=0.4f)
 				{
 					GameObject cone = Instantiate(conePrefab) as GameObject;
-					cone.transform.position = new Vector3(4 * j, cone.transform.position.y, i);
+					cone.transform.position = new Vector3(4 * j, cone.transform.position.y, unitychanPos + 40);
 
 				}	
 			}
@@ -36,27 +41,17 @@ public class ItemGenerator : MonoBehaviour {
 					if(1 <= item && item <= 6)
 					{
 						GameObject coin = Instantiate(coinPrefab) as GameObject;
-						coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, i + offsetZ);
+						coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y,  unitychanPos + 40 + offsetZ);
 						
 					}
 					else if(7 <= item && item <= 9)
 					{
 						GameObject car = Instantiate(carPrefab) as GameObject;
-						car.transform.position = new Vector3 (posRange * j, car.transform.position.y, i + offsetZ); 
+						car.transform.position = new Vector3 (posRange * j, car.transform.position.y,  unitychanPos + 40 + offsetZ); 
 					}	
 				}
 			}
-		}
-	}
-
-	
-	// Update is called once per frame
-	void Update () {
-		if(this.goalPos < 120)
-		{
-			this.startPos+=40;
-			this.goalPos+=40;
-			Start();
+			this.unitychanPos = unitychan.transform.position.z;	 
 		}
 	}
 }

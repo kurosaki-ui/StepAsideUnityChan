@@ -38,9 +38,10 @@ GameObject:
   - component: {fileID: 4103262365743488}
   - component: {fileID: 65097410705707456}
   - component: {fileID: 114024345885723296}
+  - component: {fileID: 114626266517272954}
   m_Layer: 0
-  m_Name: coin
-  m_TagString: Untagged
+  m_Name: coinPrefab
+  m_TagString: CoinTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +265,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1654074714054746}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.5, z: 0.7}
@@ -278,5 +279,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bda32f9d617a44a5da606d4d7f87ae0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114626266517272954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1654074714054746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4533baed3651646deaa37a5aab864203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

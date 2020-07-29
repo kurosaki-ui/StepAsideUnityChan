@@ -10,7 +10,7 @@ public class ItemGenerator : MonoBehaviour {
 	private int goalPos = 120;
 	private float posRange = 3.4f;
 	private GameObject unitychan;
-	private float unitychanPos = -200;
+	private float unitychanPos = -245;
 
 	// Use this for initialization
 	void Start () {
